@@ -1,11 +1,15 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import JarvisHeader from '@/components/JarvisHeader';
+import Phase0 from '@/components/Phase0';
 
 const Index = () => {
+  const [currentPhase, setCurrentPhase] = useState(0);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <JarvisHeader currentPhase={currentPhase} />
+      <div className="container mx-auto px-4 py-8">
+        <Phase0 />
       </div>
     </div>
   );
