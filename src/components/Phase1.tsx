@@ -17,7 +17,7 @@ interface ChatMessage {
 }
 
 const Phase1 = () => {
-  const [setupProgress, setSetupProgress] = useState(0);
+  const [setupProgress, setSetupProgress] = useState(100);
   const [chatInput, setChatInput] = useState('');
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
     {
@@ -48,14 +48,14 @@ const Phase1 = () => {
       id: 'langchain',
       title: 'LangChain Integration',
       description: 'Connect LLM with memory management',
-      status: 'in-progress' as const,
+      status: 'completed' as const,
       tech: 'LangChain + Custom Memory'
     },
     {
       id: 'nlp-engine',
       title: 'NLP Engine Testing',
       description: 'Test chat functionality and response quality',
-      status: 'pending' as const,
+      status: 'completed' as const,
       tech: 'Custom NLP Pipeline'
     }
   ];
