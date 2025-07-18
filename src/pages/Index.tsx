@@ -4,9 +4,10 @@ import Phase0 from '@/components/Phase0';
 import Phase1 from '@/components/Phase1';
 import Phase2 from '@/components/Phase2';
 import Phase3 from '@/components/Phase3';
+import Phase4 from '@/components/Phase4';
 
 const Index = () => {
-  const [currentPhase, setCurrentPhase] = useState(3);
+  const [currentPhase, setCurrentPhase] = useState(4);
 
   const renderCurrentPhase = () => {
     switch (currentPhase) {
@@ -18,6 +19,8 @@ const Index = () => {
         return <Phase2 />;
       case 3:
         return <Phase3 />;
+      case 4:
+        return <Phase4 />;
       default:
         return <Phase0 />;
     }
