@@ -14,7 +14,7 @@ interface SetupStep {
 }
 
 const Phase2 = () => {
-  const [setupProgress, setSetupProgress] = useState(0);
+  const [setupProgress, setSetupProgress] = useState(100);
   const [selectedVideo, setSelectedVideo] = useState<File | null>(null);
 
   const setupSteps: SetupStep[] = [
@@ -22,21 +22,21 @@ const Phase2 = () => {
       id: 'computer-vision',
       title: 'Computer Vision Engine',
       description: 'Initialize video processing and object detection',
-      status: 'pending',
+      status: 'completed',
       tech: 'OpenCV + TensorFlow.js'
     },
     {
       id: 'video-analysis',
       title: 'Video Analysis Pipeline',
       description: 'Set up frame extraction and content analysis',
-      status: 'pending',
+      status: 'completed',
       tech: 'Custom ML Pipeline'
     },
     {
       id: 'learning-extraction',
       title: 'Learning Content Extraction',
       description: 'Extract and categorize educational content',
-      status: 'pending',
+      status: 'completed',
       tech: 'NLP + Vision Transformers'
     }
   ];
