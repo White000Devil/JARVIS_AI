@@ -3,9 +3,10 @@ import JarvisHeader from '@/components/JarvisHeader';
 import Phase0 from '@/components/Phase0';
 import Phase1 from '@/components/Phase1';
 import Phase2 from '@/components/Phase2';
+import Phase3 from '@/components/Phase3';
 
 const Index = () => {
-  const [currentPhase, setCurrentPhase] = useState(2);
+  const [currentPhase, setCurrentPhase] = useState(3);
 
   const renderCurrentPhase = () => {
     switch (currentPhase) {
@@ -15,6 +16,8 @@ const Index = () => {
         return <Phase1 />;
       case 2:
         return <Phase2 />;
+      case 3:
+        return <Phase3 />;
       default:
         return <Phase0 />;
     }
