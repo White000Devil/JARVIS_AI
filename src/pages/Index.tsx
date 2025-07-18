@@ -2,9 +2,10 @@ import { useState } from 'react';
 import JarvisHeader from '@/components/JarvisHeader';
 import Phase0 from '@/components/Phase0';
 import Phase1 from '@/components/Phase1';
+import Phase2 from '@/components/Phase2';
 
 const Index = () => {
-  const [currentPhase, setCurrentPhase] = useState(1);
+  const [currentPhase, setCurrentPhase] = useState(2);
 
   const renderCurrentPhase = () => {
     switch (currentPhase) {
@@ -12,6 +13,8 @@ const Index = () => {
         return <Phase0 />;
       case 1:
         return <Phase1 />;
+      case 2:
+        return <Phase2 />;
       default:
         return <Phase0 />;
     }
