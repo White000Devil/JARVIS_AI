@@ -4,18 +4,19 @@ import { Brain, Eye, MessageSquare, Shield, Settings, Rocket } from 'lucide-reac
 
 interface JarvisHeaderProps {
   currentPhase: number;
+  onPhaseChange?: (phase: number) => void;
 }
 
 const phases = [
-  { id: 0, name: 'Preparation', icon: Settings, color: 'bg-blue-500' },
-  { id: 1, name: 'Core NLP', icon: MessageSquare, color: 'bg-green-500' },
-  { id: 2, name: 'Video Learning', icon: Eye, color: 'bg-purple-500' },
-  { id: 3, name: 'Self-Learning', icon: Brain, color: 'bg-orange-500' },
-  { id: 4, name: 'Multimodal UI', icon: Rocket, color: 'bg-pink-500' },
-  { id: 5, name: 'Security & Deploy', icon: Shield, color: 'bg-red-500' }
+  { id: 0, name: 'Preparation', icon: Settings },
+  { id: 1, name: 'Core NLP', icon: MessageSquare },
+  { id: 2, name: 'Video Learning', icon: Eye },
+  { id: 3, name: 'Self-Learning', icon: Brain },
+  { id: 4, name: 'Multimodal UI', icon: Rocket },
+  { id: 5, name: 'Production Deploy', icon: Shield }
 ];
 
-const JarvisHeader = ({ currentPhase }: JarvisHeaderProps) => {
+const JarvisHeader = ({ currentPhase, onPhaseChange }: JarvisHeaderProps) => {
   const progress = ((currentPhase + 1) / phases.length) * 100;
 
   return (
@@ -51,24 +52,25 @@ const JarvisHeader = ({ currentPhase }: JarvisHeaderProps) => {
             return (
               <div
                 key={phase.id}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg whitespace-nowrap transition-all ${
+                onClick={() => onPhaseChange?.(index)}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg whitespace-nowrap transition-all cursor-pointer hover:scale-105 ${
                   isActive 
                     ? 'bg-primary/10 border-2 border-primary/30' 
                     : isCompleted 
-                    ? 'bg-green-50 dark:bg-green-900/20' 
-                    : 'bg-muted/50'
+                    ? 'bg-secondary/50 border border-secondary hover:bg-secondary/70' 
+                    : 'bg-muted/50 hover:bg-muted/70'
                 }`}
               >
-                <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
-                  isActive ? 'bg-primary' : isCompleted ? 'bg-green-500' : 'bg-muted'
-                }`}>
-                  <Icon className={`h-3 w-3 ${
-                    isActive || isCompleted ? 'text-white' : 'text-muted-foreground'
-                  }`} />
+                 <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                   isActive ? 'bg-primary' : isCompleted ? 'bg-secondary' : 'bg-muted'
+                 }`}>
+                   <Icon className={`h-3 w-3 ${
+                     isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'
+                   }`} />
                 </div>
-                <span className={`text-sm font-medium ${
-                  isActive ? 'text-primary' : isCompleted ? 'text-green-600 dark:text-green-400' : 'text-muted-foreground'
-                }`}>
+                 <span className={`text-sm font-medium ${
+                   isActive ? 'text-primary' : isCompleted ? 'text-secondary-foreground' : 'text-muted-foreground'
+                 }`}>
                   {phase.name}
                 </span>
                 {index < phases.length - 1 && (

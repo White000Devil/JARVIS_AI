@@ -94,11 +94,11 @@ const Phase4 = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="h-4 w-4 text-green-500" />;
+        return <CheckCircle className="h-4 w-4 text-success" />;
       case 'in-progress':
-        return <Clock className="h-4 w-4 text-yellow-500 animate-spin" />;
+        return <Clock className="h-4 w-4 text-warning animate-spin" />;
       default:
-        return <Clock className="h-4 w-4 text-gray-400" />;
+        return <Clock className="h-4 w-4 text-muted-foreground" />;
     }
   };
 
@@ -189,15 +189,15 @@ const Phase4 = () => {
             {modalityStatuses.map((modality, index) => {
               const Icon = modality.icon;
               return (
-                <div key={index} className={`p-4 rounded-lg border-2 transition-all ${
-                  modality.status === 'active' 
-                    ? 'border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-900/20' 
-                    : 'border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900/20'
+                 <div key={index} className={`p-4 rounded-lg border-2 transition-all ${
+                   modality.status === 'active' 
+                     ? 'border-success/20 bg-success/10' 
+                     : 'border-muted bg-muted/20'
                 }`}>
                   <div className="flex items-center gap-2 mb-2">
-                    <Icon className={`h-5 w-5 ${
-                      modality.status === 'active' ? 'text-green-600' : 'text-gray-400'
-                    }`} />
+                     <Icon className={`h-5 w-5 ${
+                       modality.status === 'active' ? 'text-success' : 'text-muted-foreground'
+                     }`} />
                     <h4 className="font-medium">{modality.name}</h4>
                   </div>
                   <p className="text-xs text-muted-foreground mb-2">{modality.description}</p>
@@ -225,9 +225,9 @@ const Phase4 = () => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="text-center p-6 border-2 border-dashed border-muted-foreground/25 rounded-lg">
-              <Mic className={`h-12 w-12 mx-auto mb-4 ${
-                isListening ? 'text-red-500 animate-pulse' : 'text-muted-foreground'
+             <div className="text-center p-6 border-2 border-dashed border-muted-foreground/25 rounded-lg">
+               <Mic className={`h-12 w-12 mx-auto mb-4 ${
+                 isListening ? 'text-destructive animate-pulse' : 'text-muted-foreground'
               }`} />
               <p className="text-sm text-muted-foreground mb-4">
                 {isListening ? 'Listening for voice commands...' : 'Click to start voice interaction'}

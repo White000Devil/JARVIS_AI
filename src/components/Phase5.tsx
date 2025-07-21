@@ -93,11 +93,11 @@ const Phase5 = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="h-4 w-4 text-green-500" />;
+        return <CheckCircle className="h-4 w-4 text-success" />;
       case 'in-progress':
-        return <Clock className="h-4 w-4 text-yellow-500 animate-spin" />;
+        return <Clock className="h-4 w-4 text-warning animate-spin" />;
       default:
-        return <Clock className="h-4 w-4 text-gray-400" />;
+        return <Clock className="h-4 w-4 text-muted-foreground" />;
     }
   };
 
@@ -226,15 +226,15 @@ const Phase5 = () => {
             {integrationStatuses.map((integration, index) => {
               const Icon = integration.icon;
               return (
-                <div key={index} className={`p-4 rounded-lg border-2 transition-all ${
-                  integration.status === 'active' 
-                    ? 'border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-900/20' 
-                    : 'border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900/20'
+                 <div key={index} className={`p-4 rounded-lg border-2 transition-all ${
+                   integration.status === 'active' 
+                     ? 'border-success/20 bg-success/10' 
+                     : 'border-muted bg-muted/20'
                 }`}>
                   <div className="flex items-center gap-2 mb-2">
-                    <Icon className={`h-5 w-5 ${
-                      integration.status === 'active' ? 'text-green-600' : 'text-gray-400'
-                    }`} />
+                     <Icon className={`h-5 w-5 ${
+                       integration.status === 'active' ? 'text-success' : 'text-muted-foreground'
+                     }`} />
                     <h4 className="font-medium">{integration.name}</h4>
                   </div>
                   <p className="text-xs text-muted-foreground mb-2">{integration.description}</p>
@@ -402,20 +402,20 @@ const Phase5 = () => {
         </CardContent>
       </Card>
 
-      {/* Success Message */}
-      <Card className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-900/20">
-        <CardContent className="pt-6">
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto">
-              <CheckCircle className="h-8 w-8 text-green-600" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-green-900 dark:text-green-100">
-                🎉 JARVIS AI System Complete!
+       {/* Success Message */}
+       <Card className="border-success/20 bg-success/10">
+         <CardContent className="pt-6">
+           <div className="text-center space-y-4">
+             <div className="w-16 h-16 bg-success/20 rounded-full flex items-center justify-center mx-auto">
+               <CheckCircle className="h-8 w-8 text-success" />
+             </div>
+             <div>
+               <h3 className="text-xl font-bold text-success">
+                 🎉 JARVIS AI System Complete!
               </h3>
-              <p className="text-green-700 dark:text-green-300 mt-2">
-                Your advanced AI assistant is now fully deployed and ready for production use.
-                All phases completed successfully with enterprise-grade infrastructure.
+               <p className="text-success/80 mt-2">
+                 Your advanced AI assistant is now fully deployed and ready for production use.
+                 All phases completed successfully with enterprise-grade infrastructure.
               </p>
             </div>
           </div>

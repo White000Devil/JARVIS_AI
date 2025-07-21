@@ -68,11 +68,11 @@ const Phase3 = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="h-4 w-4 text-green-500" />;
+        return <CheckCircle className="h-4 w-4 text-success" />;
       case 'in-progress':
-        return <Clock className="h-4 w-4 text-yellow-500 animate-spin" />;
+        return <Clock className="h-4 w-4 text-warning animate-spin" />;
       default:
-        return <Clock className="h-4 w-4 text-gray-400" />;
+        return <Clock className="h-4 w-4 text-muted-foreground" />;
     }
   };
 
@@ -163,9 +163,9 @@ const Phase3 = () => {
               <div key={index} className="bg-gradient-to-br from-muted/50 to-muted/20 p-4 rounded-lg">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-sm font-medium text-muted-foreground">{metric.label}</h4>
-                  <div className={`flex items-center gap-1 text-xs ${
-                    metric.change > 0 ? 'text-green-600' : 'text-red-600'
-                  }`}>
+                   <div className={`flex items-center gap-1 text-xs ${
+                     metric.change > 0 ? 'text-success' : 'text-destructive'
+                   }`}>
                     <TrendingUp className="h-3 w-3" />
                     {metric.change > 0 ? '+' : ''}{metric.change}
                   </div>

@@ -100,16 +100,16 @@ const Phase1 = () => {
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case 'completed': return <Check className="h-4 w-4 text-green-500" />;
-      case 'in-progress': return <Clock className="h-4 w-4 text-yellow-500" />;
+      case 'completed': return <Check className="h-4 w-4 text-success" />;
+      case 'in-progress': return <Clock className="h-4 w-4 text-warning" />;
       default: return <Play className="h-4 w-4 text-muted-foreground" />;
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'completed': return 'bg-green-500/10 text-green-600 border-green-500/20';
-      case 'in-progress': return 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20';
+      case 'completed': return 'bg-success/10 text-success border-success/20';
+      case 'in-progress': return 'bg-warning/10 text-warning border-warning/20';
       default: return 'bg-muted text-muted-foreground';
     }
   };
@@ -119,9 +119,9 @@ const Phase1 = () => {
       {/* Phase Header */}
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center gap-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
-            <MessageSquare className="h-6 w-6 text-white" />
-          </div>
+           <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+             <MessageSquare className="h-6 w-6 text-primary-foreground" />
+           </div>
           <div>
             <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
               Phase 1: Core NLP & Memory

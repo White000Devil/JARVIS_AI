@@ -44,11 +44,11 @@ const Phase2 = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="h-4 w-4 text-green-500" />;
+        return <CheckCircle className="h-4 w-4 text-success" />;
       case 'in-progress':
-        return <Clock className="h-4 w-4 text-yellow-500 animate-spin" />;
+        return <Clock className="h-4 w-4 text-warning animate-spin" />;
       default:
-        return <Clock className="h-4 w-4 text-gray-400" />;
+        return <Clock className="h-4 w-4 text-muted-foreground" />;
     }
   };
 
@@ -181,21 +181,21 @@ const Phase2 = () => {
               <div className="border rounded-lg p-4 bg-muted/30">
                 <h4 className="font-medium mb-2">Analysis Features</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    Scene detection and segmentation
+                   <li className="flex items-center gap-2">
+                     <div className="w-2 h-2 bg-primary rounded-full"></div>
+                     Scene detection and segmentation
                   </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    Text and speech recognition
+                   <li className="flex items-center gap-2">
+                     <div className="w-2 h-2 bg-primary rounded-full"></div>
+                     Text and speech recognition
                   </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    Concept identification and tagging
+                   <li className="flex items-center gap-2">
+                     <div className="w-2 h-2 bg-primary rounded-full"></div>
+                     Concept identification and tagging
                   </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    Learning objective extraction
+                   <li className="flex items-center gap-2">
+                     <div className="w-2 h-2 bg-primary rounded-full"></div>
+                     Learning objective extraction
                   </li>
                 </ul>
               </div>
