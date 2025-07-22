@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Brain, Eye, MessageSquare, Shield, Settings, Rocket } from 'lucide-react';
+import { Brain, Eye, MessageSquare, Shield, Settings, Rocket, Bot } from 'lucide-react';
 
 interface JarvisHeaderProps {
   currentPhase: number;
@@ -13,7 +13,8 @@ const phases = [
   { id: 2, name: 'Video Learning', icon: Eye },
   { id: 3, name: 'Self-Learning', icon: Brain },
   { id: 4, name: 'Multimodal UI', icon: Rocket },
-  { id: 5, name: 'Production Deploy', icon: Shield }
+  { id: 5, name: 'Production Deploy', icon: Shield },
+  { id: 6, name: 'JARVIS Active', icon: Bot }
 ];
 
 const JarvisHeader = ({ currentPhase, onPhaseChange }: JarvisHeaderProps) => {
